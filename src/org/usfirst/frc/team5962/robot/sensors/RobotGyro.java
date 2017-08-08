@@ -8,7 +8,7 @@ public class RobotGyro {
 	final int gyroChannel = 0;
 	double angleSetPoint = 0.0;
 	final double gyroSpeedConstant = 0.006;
-
+	
 	public RobotGyro() {
 		gyro = new ADXRS450_Gyro();
 	}
@@ -40,7 +40,7 @@ public class RobotGyro {
 	public void calibrateGyro() {
 		gyro.calibrate();
 	}
-
+	
 	/**
 	 * <pre>
 	 * Return the actual angle in degrees that the robot is currently facing.
@@ -54,12 +54,16 @@ public class RobotGyro {
 	 * output as it sweeps past from 360 to 0 on the second time around.
 	 * </pre>
 	 * 
-	 * @return the current heading of the robot in degrees. This heading is
-	 *         based on integration of the returned rate from the gyro.
+	 * @return the current heading of the robot in degrees. This heading is based on
+	 *         integration of the returned rate from the gyro.
 	 */
 
 	public double getGyroAngle() {
 		return gyro.getAngle();
+	}
+	
+	public double getInvertedGyroAngle() {
+		return -gyro.getAngle();
 	}
 
 	public double getTurningValue() {
