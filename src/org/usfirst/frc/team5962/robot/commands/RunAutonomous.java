@@ -11,7 +11,6 @@ public class RunAutonomous extends Command {
 	}
 
 	protected void execute() {
-		// Call the method you created in the Autonomous subsystem here:
 
 	}
 
